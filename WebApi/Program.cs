@@ -17,6 +17,8 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
 }
 
+app.MapGet("/test", () => "Works!");
+
 app.UseAuthorization();
 app.UseHttpsRedirection();
 
