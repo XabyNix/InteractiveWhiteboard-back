@@ -9,7 +9,7 @@ internal static class ServicesExtensions
             opt.AddPolicy("allowWhiteBoard",
                 policy =>
                 {
-                    policy.WithOrigins("http://localhost:4200", "http://localhost:4200/")
+                    policy.WithOrigins("http://localhost:4200", "http://localhost:4200/", "https://interactive-board-front-eyrqdpans-xabynixs-projects.vercel.app/", "https://interactive-board-front-eyrqdpans-xabynixs-projects.vercel.app")
                         .AllowAnyHeader()
                         .AllowAnyMethod()
                         .AllowCredentials();
