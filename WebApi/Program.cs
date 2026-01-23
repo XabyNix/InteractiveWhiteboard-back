@@ -3,9 +3,10 @@ using InteractiveWhiteboard_back.Extensions;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddOpenApi();
-
 builder.Services.AddSignalR();
-builder.Services.ConfigureCors();
+builder.Services.ConfigureCors(builder.Configuration);
+
+
 
 var app = builder.Build();
 

@@ -1,15 +1,20 @@
-﻿namespace InteractiveWhiteboard_back.Extensions;
+﻿using Microsoft.AspNetCore.Cors.Infrastructure;
+
+namespace InteractiveWhiteboard_back.Extensions;
 
 internal static class ServicesExtensions
 {
-    public static void ConfigureCors(this IServiceCollection services)
+    public static void ConfigureCors(this IServiceCollection services, IConfigurationManager configuration)
     {
+        var allowedOrigins = configuration.GetSection("Cors:AllowedOrigins")
+            .Get<string[]>();
+        
         services.AddCors(opt =>
         {
             opt.AddPolicy("allowWhiteBoard",
                 policy =>
                 {
-                    policy.WithOrigins("http://localhost:4200", "http://localhost:4200/", "https://interactive-board-front-eyrqdpans-xabynixs-projects.vercel.app/", "https://interactive-board-front-eyrqdpans-xabynixs-projects.vercel.app")
+                    policy.WithOrigins(allowedOrigins ?? [])
                         .AllowAnyHeader()
                         .AllowAnyMethod()
                         .AllowCredentials();
