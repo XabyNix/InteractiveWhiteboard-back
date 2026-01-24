@@ -4,5 +4,6 @@ public static class ActionNames
 {
     public const string ReceiveStroke = "ReceiveStroke";
     public const string ReceivePoint = "ReceivePoint";
+    public const string ReceivePointList = "ReceivePointList";
     public const string Clear = "Clear";
 }

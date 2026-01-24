@@ -16,6 +16,11 @@ public sealed class StrokeHub : Hub
         await Clients.Others.SendAsync(ActionNames.ReceivePoint, input);
     }
     
+    public async Task SendPointList(List<PointDto> input)
+    {
+        await Clients.Others.SendAsync(ActionNames.ReceivePointList, input);
+    }
+    
     public async Task Clear()
     {
         await Clients.Others.SendAsync(ActionNames.Clear);
