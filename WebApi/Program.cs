@@ -62,14 +62,13 @@ app.UseCors("allowWhiteBoard");
 app.UseAuthentication();
 app.UseAuthorization();
 
-if (app.Environment.IsDevelopment())
+
+app.MapOpenApi();
+app.UseSwaggerUI(swaggerOptions =>
 {
-    app.MapOpenApi();
-    app.UseSwaggerUI(swaggerOptions =>
-    {
-        swaggerOptions.SwaggerEndpoint("/openapi/v1.json", "Documentation V1");
-    });
-}
+    swaggerOptions.SwaggerEndpoint("/openapi/v1.json", "Documentation V1");
+});
+
 
 app.MapSignalrHubs();
 app.MapControllers();
