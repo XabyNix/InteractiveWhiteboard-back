@@ -1,4 +1,4 @@
-﻿namespace Core.Configurations.Models;
+﻿namespace Core.Configurations.Options;
 
 public record CorsOptionsConfig
 {

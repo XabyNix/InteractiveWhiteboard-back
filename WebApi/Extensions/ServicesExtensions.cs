@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Cors.Infrastructure;
+﻿using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Cors.Infrastructure;
+using Microsoft.IdentityModel.Tokens;
 
 namespace InteractiveWhiteboard_back.Extensions;
 
